@@ -1,24 +1,19 @@
 import { useEffect, useState } from 'react';
-import Myaccountsummary from '../components/products/Myaccountsummary';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import Pending from '../components/products/Pending';
 
-const ViewPurchaseHistory = () => {
-  const [account, setaccount] = useState([]);
-  const navigate = useNavigate();
-  const params = useParams();
-  const userId = params.userId;
+  const ViewPurchaseHistory = () => {
+  const [products, setProducts] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
 
-    const fetchHistory= async () => {
+    const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/account/all/` + userId,{
-            method: 'GET',
-            signal: fetchSignal
+        const response = await fetch('http://localhost:3000/account', {
+          signal: fetchSignal
         });
         const data = await response.json();
 
@@ -26,14 +21,14 @@ const ViewPurchaseHistory = () => {
           throw Error(data.error);
         }
 
-        setaccount(data.History);
+        setProducts(data.pHistory);
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
       }
     };
 
-    fetchHistory();
+    fetchProducts();
 
     return () => {
       fetchAbortController.abort();
@@ -46,8 +41,9 @@ const ViewPurchaseHistory = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <Myaccountsummary account={account} />
+      <Pending products={products} />
     </div>
   );
 };
+
 export default ViewPurchaseHistory;

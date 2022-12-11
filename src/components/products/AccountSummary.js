@@ -13,11 +13,11 @@ const AccountSummary = (props) => {
     <div class="containersheroq">
       <div class="cardBody">
         <h1 className="font-bold">{props.product.Name}</h1>
-        <h2 className="font-bold">{props.product.username}</h2>
+        <h2 className="font-bold">{props.product.Username}</h2>
         <h2 className="font-bold">{props.product.Password}</h2>
 
         <h4>{props.product.Description}</h4>
-        <button onClick={OnClickHandler} className="DeleteButtonSheroq"><h2>DeleteAccount</h2></button>
+        <button onClick={OnClickHandler} className="DeleteButtonSheroq"><h2>Delete Account</h2></button>
       </div>
     </div>
   );

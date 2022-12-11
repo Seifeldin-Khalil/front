@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AccountSummary from '.../components/products/AccountSummary';
+//import AccountSummary from '.../components/products/AccountSummary';
 import { useParams } from 'react-router-dom';
 
 
@@ -23,7 +23,7 @@ const DeleteAccount = (props) => {
     const fetchProducts = async () => {
       console.log(requestId);
       try {
-        const response = await fetch (`http://localhost:3000/account/user/` + requestId,{
+        const response = await fetch (`http://localhost:3000/account/` + requestId,{
         method: 'DELETE',
         signal: fetchSignal
         });
@@ -32,7 +32,7 @@ const DeleteAccount = (props) => {
         if (!response.ok) {
           throw Error(data.error);
         }else{
-          navigate(`/User`);
+          navigate(`/signup`);
         }
      
         setProducts(data.users);

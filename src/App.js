@@ -16,8 +16,11 @@ import ViewUsersUpdatedDeleted from './pages/ViewUsersUpdatedDeleted';
 import ViewMine from './pages/ViewMine';
 import DeleteMyProp from './pages/DeleteMyProp';
 import AddPropertyForm from './pages/Add-Property-Form';
-import ViewHistory from './pages/ViewHistory';
 import DeleteAccount from './pages/DeleteAccount';
+import MakeNewPayment from './pages/MakeNewPayment';
+import ViewPurchaseHistory from './pages/ViewPurchaseHistory';
+import EditPropertyForm from './pages/Edit-Property-Form';
+
 
 const App = () => {
   return (
@@ -40,11 +43,11 @@ const App = () => {
             <Route path="/Viewusersdel/:id" element={<ViewUsersUpdatedDeleted/>}/>
             <Route path="/Deleted/:id" element= {<DeleteMyProp/>} />
             <Route path="/AddProperty" element={<AddPropertyForm/>}/>
-            <Route path="/ViewHistory/:userId" element={<ViewHistory/>}/> 
             <Route path="/DeleteAccount/:id" element={<DeleteAccount/>}/> 
             <Route path="/ViewPurchaseHistory/:userId" element={<ViewPurchaseHistory/>}/>
-            <Route path="/MakePayment" element={<MakePayment/>}/>
-            <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/>
+            <Route path="/MakeNewPayment" element={<MakeNewPayment/>}/>
+            <Route path="EditProperty/:userId" element={<EditPropertyForm/>}/>
+            {/* <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/> */}
           </Routes>
         </Layout>
       </BrowserRouter>

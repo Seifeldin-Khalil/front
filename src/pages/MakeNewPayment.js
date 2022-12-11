@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import AuthContext from '../../store/authContext';
-import FormInputError from '../../UI/form/FormInputError';
-import TextInput from '../../UI/form/TextInput';
+import AuthContext from '../store/authContext';
+import FormInputError from '../UI/form/FormInputError';
+import TextInput from '../UI/form/TextInput';
 
 const MakeNewPayment = () => {
   const { register, handleSubmit, formState } = useForm();
@@ -13,7 +13,7 @@ const MakeNewPayment = () => {
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:5000/auth/signin', {//////
+      const response = await fetch('http://localhost:3000/Purchase', {//////
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const MakeNewPayment = () => {
       }
 
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.username, data.jwt);///////
+      //authContext.login(data.userId, data.username, data.jwt);///////
 
       // navigate to the home page
       navigate('/');
@@ -45,7 +45,7 @@ const MakeNewPayment = () => {
       <TextInput
         label="PaymentMethod"
         type="text"
-        name="Paymentmethod"
+        name="PaymentMethod"
         register={register}
         validation={{ required: true }}
       />
@@ -56,38 +56,13 @@ const MakeNewPayment = () => {
       <TextInput
         label="price"
         type="text "
-        name="price"
+        name="Price"
         register={register}
         validation={{ required: true }}
       />
       {formState.errors.price && (
         <FormInputError>price must not be empty.</FormInputError>
       )}
-
-    <TextInput
-        label="Description"
-        type="text "
-        name="Description"
-        register={register}
-        validation={{ required: true }}
-      />
-      {formState.errors.Description && (
-        <FormInputError>Description must not be empty.</FormInputError>
-      )}
-    
-    <TextInput
-        label="Description"
-        type="text "
-        name="Description"
-        register={register}
-        validation={{ required: true }}
-      />
-      
-
-
-
-
-
 
       <button
         type="submit"

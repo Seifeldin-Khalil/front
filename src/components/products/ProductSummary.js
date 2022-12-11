@@ -21,7 +21,7 @@ const ProductSummary = (props) => {
         className="object-scale-down h-[200px]"
         src = {props.product.ImgURL}
         alt = {props.product.Name}/>
-        <a href="/ViewUsersPage">
+        <a href="/MakeNewPayment">
             <button class="buttonsama"><h2>Rent</h2></button>
       </a>
       </CardBody>
