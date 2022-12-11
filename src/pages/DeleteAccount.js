@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const DeleteAccount = (props) => {
   const [products, setProducts] = useState([]);
+  const [account, setaccount] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
 

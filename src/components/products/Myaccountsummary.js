@@ -68,12 +68,3 @@ const Myaccountsummary = (props) => {
   );
 };
 export default Myaccountsummary;
-
-
-
-
-
-
-
-
-

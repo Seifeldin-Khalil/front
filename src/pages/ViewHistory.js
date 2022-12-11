@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import Myaccountsummary from '../components/products/Myaccountsummary';
+import ViewPurchaseHistory from '../components/products/viewPurchaseHistory';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const ViewPurchaseHistory = () => {
+
+const ViewHistory = () => {
   const [account, setaccount] = useState([]);
   const navigate = useNavigate();
   const params = useParams();
@@ -46,8 +47,8 @@ const ViewPurchaseHistory = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <Myaccountsummary account={account} />
+      <ViewPurchaseHistory account={account} />
     </div>
   );
 };
-export default ViewPurchaseHistory;
+export default ViewHistory;
