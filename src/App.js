@@ -18,6 +18,7 @@ import DeleteMyProp from './pages/DeleteMyProp';
 import AddPropertyForm from './pages/Add-Property-Form';
 import ViewHistory from './pages/ViewHistory';
 import DeleteAccount from './pages/DeleteAccount';
+
 const App = () => {
   return (
     <AuthProvider>
