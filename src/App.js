@@ -16,7 +16,7 @@ import ViewPropertiesUpdatedDeleted from './pages/ViewPropertiesUpdatedDeleted';
 import ViewUsersUpdatedDeleted from './pages/ViewUsersUpdatedDeleted';
 import ViewMine from './pages/ViewMine';
 import DeleteMyProp from './pages/DeleteMyProp';
-
+import AddPropertyForm from './pages/Add-Property-Form';
 const App = () => {
   return (
     <AuthProvider>
@@ -37,6 +37,7 @@ const App = () => {
             <Route path="/Viewpropertiesdel/:id" element={<ViewPropertiesUpdatedDeleted/>}/>
             <Route path="/Viewusersdel/:id" element={<ViewUsersUpdatedDeleted/>}/>
             <Route path="/Deleted/:id" element= {<DeleteMyProp/>} />
+            <Route path="/AddProperty" element={<AddPropertyForm/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>
