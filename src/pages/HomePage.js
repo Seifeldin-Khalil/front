@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import ProductsList from '../components/products/ProductsList';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
+  
   // let's define a state for loading
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,22 +14,16 @@ const HomePage = () => {
 
     const fetchProducts = async () => {
       try {
-        // send an HTTP GET request to the get products route we defined in our Express REST API
         const response = await fetch('http://localhost:3000/properties/all', {
           signal: fetchSignal
         });
-        // parse the response content to JSON and store it into data variable
         const data = await response.json();
 
-        // If there is an HTTP error (the response is NOT ok), throw the error message we get from the REST API.
         if (!response.ok) {
-          // remember, in our REST API we return an error message in our response that has the key 'error'.
           throw Error(data.error);
         }
 
-        // we now need to set our component state to the products we fetched
         setProducts(data.properties);
-        // after we set the products' state, let's set the loading state to false
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -45,9 +41,7 @@ const HomePage = () => {
   }
   return (
     <div>
-      <a href="/viewmine/6394a307a8bafc7e2a372633">
-            <button class="buttonsama1"><h2>My properties</h2></button>
-      </a>
+      <button class="buttonsama1"><h2>My properties</h2></button>
       <ProductsList products={products} />
     </div>
   );

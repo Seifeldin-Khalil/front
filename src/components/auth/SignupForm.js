@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const SignupForm = () => {
   const { register, handleSubmit, formState } = useForm();
   const navigate = useNavigate();
-
+  navigate(`/signin`);
 
   const submitHandler = async (formData) => {
     try {
@@ -25,7 +25,6 @@ const SignupForm = () => {
       }
 
       console.log(data);
-      navigate('/signin');
     } catch (err) {
       console.log(err.message);
     }
@@ -72,6 +71,7 @@ const SignupForm = () => {
       <button
         type="submit"
         className="bg-white rounded-xl my-4 py-2 px-8 self-center"
+        onClick={navigate}
       >
         Signup
       </button>

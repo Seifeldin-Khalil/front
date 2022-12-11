@@ -9,7 +9,7 @@ const MyPropSummary = (props) => {
   const navigate = useNavigate();
 
   const OnClickHandler = () => {
-    navigate(`/Deleted/639551a4d36b1fe03d94fb73`);
+    navigate(`/Deleted/${props.product._id}`);
   };
 
   return (
