@@ -1,7 +1,5 @@
-
-
 import React from 'react';
-import MakeNewPayment from '../components/auth/MakeNewPayment';
+import MakeNewPayment from '../components/products/MakeNewPayment';
 
 const MakePayment = () => {
   return <MakeNewPayment />;

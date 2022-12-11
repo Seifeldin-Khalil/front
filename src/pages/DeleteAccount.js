@@ -2,22 +2,25 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Pending from '../components/products/Pending';
 import { useParams } from 'react-router-dom';
-import React from 'react';
 
 
 
 const DeleteAccount = (props) => {
+  const [products, setProducts] = useState([]);
   const [account, setaccount] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+
   const navigate = useNavigate();
   const params = useParams();
   const requestId = params.id;
 
+ 
   useEffect(() => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
 
-    const fetchaccount= async () => {
+    const fetchProducts = async () => {
       console.log(requestId);
       try {
         const response = await fetch (`http://localhost:3000/account/userDelete/` + requestId,{
@@ -31,31 +34,29 @@ const DeleteAccount = (props) => {
         }else{
           navigate(`/viewusers`);
         }
-        
-        setaccount(data.users);
+     
+        setProducts(data.users);
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
       }
     };
-
-
-
-    fetchaccount();
+    fetchProducts();
 
     return () => {
       fetchAbortController.abort();
     };
   }, []);
-
+  
   if (isLoading) {
     return <p>Please wait while we are loading data...</p>;
   }
 
   return (
     <div className="flex flex-col items-center justify-center">
+      {/* <PendingList products={products}/> */}
     </div>
   );
 };
 
-export default DeleteAccount;
+export default ViewUsersUpdatedDeleted;

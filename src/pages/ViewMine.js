@@ -54,7 +54,11 @@ const ViewMine = () => {
   }
 
   return (
+    
     <div className="flex flex-col items-center justify-center">
+      <a href="/">
+            <button class="buttonsama1"><h2>Add a Property</h2></button>
+      </a>
       <MyPropSummary products={products} />
     </div>
   );
