@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Pending from '../components/products/Pending';
+import ProductsList from '../components/users/UserList';
 
-  const ViewPurchaseHistory = () => {
+const viewHistory = () => {
   const [products, setProducts] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -41,9 +41,9 @@ import Pending from '../components/products/Pending';
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <Pending products={products} />
+      <ProductsList products={products} />
     </div>
   );
 };
 
-export default ViewPurchaseHistory;
+export default viewHistory;

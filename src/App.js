@@ -18,8 +18,9 @@ import DeleteMyProp from './pages/DeleteMyProp';
 import AddPropertyForm from './pages/Add-Property-Form';
 import DeleteAccount from './pages/DeleteAccount';
 import MakeNewPayment from './pages/MakeNewPayment';
-import ViewPurchaseHistory from './pages/ViewPurchaseHistory';
+import ViewPurchaseHistory from './pages/ViewHistory';
 import EditPropertyForm from './pages/Edit-Property-Form';
+import RefundButton from './pages/RefundBtn';
 
 
 const App = () => {
@@ -48,6 +49,8 @@ const App = () => {
             <Route path="/MakeNewPayment" element={<MakeNewPayment/>}/>
             <Route path="EditProperty/:userId" element={<EditPropertyForm/>}/>
             {/* <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/> */}
+            <Route path="/ViewHistory/:id" element={<ViewPurchaseHistory/>}/>
+            <Route path="RefundBtn/:userId" element={<RefundBtn/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>

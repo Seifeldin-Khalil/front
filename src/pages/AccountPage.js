@@ -12,8 +12,10 @@ const AccountPage = (props) => {
 
   const OnClickHandlertwo = () => {
     navigate(/Deleted/); ///Database
-  };
 
+   
+  };
+  
     return (
       <form
 
@@ -58,8 +60,8 @@ const AccountPage = (props) => {
         <h2 className="font-bold">{props.account.Password}</h2>
         <h3 className="font-bold">{props.account.Name}</h3>
         <h4>{props.product.UserId}</h4>
-        <button onClick={OnClickHandler} className="EditButtonSheroq"><h2>EditAccount</h2></button>
         <button onClick={OnClickHandlertwo} className="DeleteButtonSheroq"><h2>DeleteAccount</h2></button>
+
       </div>
     </div>
     </form>

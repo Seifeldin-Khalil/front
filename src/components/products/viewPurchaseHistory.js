@@ -1,20 +1,21 @@
 import { useNavigate } from 'react-router-dom';
-import Cardsheroq from '../../UI/card/Card';
 
+const viewPurchaseHistory = (props) => {
+  const navigate = useNavigate();
 
-const ViewPurchaseHistory = (History) => {
-
-
-  
+  const OnClickHandler = () => {
+    navigate(`/viewHistory/${props.product._id}`);
+  };
 
   return (
-        <div class="cardsheroq">
-        <h3 class = "Center">{History.viewPurchaseHistory.Purchase}</h3>
-        <h3>{History.viewPurchaseHistory.PaymentMethod}</h3>
-        <h3>{History.viewPurchaseHistory.Price} </h3>
-        <h3>{History.viewPurchaseHistory.Description} </h3>
+    <div class="containersheroq">
+      <div class="cardBody">
+        <h1 className="font-bold">{props.product.userId}</h1>
+        <h2>{props.product.Name}</h2>
+        <button button onClick={OnClickHandler} class="HistoryButton"><h2>viewHistory</h2></button>
       </div>
+    </div>
   );
 };
 
-export default ViewPurchaseHistory;
+export default viewPurchaseHistory;
