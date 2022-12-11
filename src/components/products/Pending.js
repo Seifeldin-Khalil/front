@@ -1,10 +1,10 @@
-import Myaccountsummary from './Pending';
+import ProductSummary from './Pending';
 
 const Pending = (props) => {
   return (
     <div>
-      {props.accounts.map((p) => (
-        <Myaccountsummary account={p} key={p._id} />
+      {props.products.map((p) => (
+        <ProductSummary product={p} key={p._id} />
       ))}
     </div>
   );
