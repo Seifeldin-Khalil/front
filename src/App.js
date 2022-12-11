@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './store/AuthProvider';
-
 import AddProductPage from './pages/AddProductPage';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -36,7 +35,7 @@ const App = () => {
             <Route path="/Viewpropertiesup/:id" element={<ViewPropertiesUpdatedApprroved/>}/>
             <Route path="/Viewpropertiesdel/:id" element={<ViewPropertiesUpdatedDeleted/>}/>
             <Route path="/Viewusersdel/:id" element={<ViewUsersUpdatedDeleted/>}/>
-            <Route path="/Deleted/:id" element= {<DeleteMyProp/>} />
+            <Route path="/Deleted/:id" element= {<DeleteMyProp/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>

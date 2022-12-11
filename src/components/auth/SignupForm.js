@@ -1,13 +1,16 @@
 import { useForm } from 'react-hook-form';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = () => {
   const { register, handleSubmit, formState } = useForm();
+  const navigate = useNavigate();
+
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:5000/auth/signup', {
+      const response = await fetch('http://localhost:3000/auth/signup/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -22,6 +25,7 @@ const SignupForm = () => {
       }
 
       console.log(data);
+      navigate('/signin');
     } catch (err) {
       console.log(err.message);
     }
@@ -35,7 +39,7 @@ const SignupForm = () => {
       <TextInput
         label="Name"
         type="text"
-        name="name"
+        name="Name"
         register={register}
         validation={{ required: true }}
       />
@@ -46,7 +50,7 @@ const SignupForm = () => {
       <TextInput
         label="Username"
         type="text"
-        name="username"
+        name="Username"
         register={register}
         validation={{ required: true }}
       />
@@ -57,7 +61,7 @@ const SignupForm = () => {
       <TextInput
         label="Password"
         type="password"
-        name="password"
+        name="Password"
         register={register}
         validation={{ required: true }}
       />
