@@ -6,13 +6,9 @@ import CardBody from '../../UI/card/CardBody';
 
 const ProductSummary = (props) => {
   // use the navigate function provided by the useNavigate react router hook
-  const navigate = useNavigate();
-
-  const btnOnClickHandler = () => {
-    navigate(`/properties/${props.product._id}`);
-  };
 
   return (
+    <dev>
       <CardBody>
         <h3 class = "Center">{props.product.Name}</h3>
         <h3>{props.product.Description}</h3>
@@ -25,6 +21,7 @@ const ProductSummary = (props) => {
             <button class="buttonsama"><h2>Rent</h2></button>
       </a>
       </CardBody>
+      </dev>
   );
 };
 

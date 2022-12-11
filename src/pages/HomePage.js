@@ -4,10 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
-  
   // let's define a state for loading
   const [isLoading, setIsLoading] = useState(true);
+  const ID = "6394a307a8bafc7e2a372633";
+  const navigate = useNavigate();
 
+  const viewBtnHandler = () => {
+    navigate(`/viewmine/${ID}`);
+};
   useEffect(() => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
@@ -41,8 +45,9 @@ const HomePage = () => {
   }
   return (
     <div>
-      <button class="buttonsama1"><h2>My properties</h2></button>
+    <button class="buttonsama1" onClick = {viewBtnHandler}>My properties</button>
       <ProductsList products={products} />
+      
     </div>
   );
 };
