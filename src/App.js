@@ -48,6 +48,8 @@ const App = () => {
             <Route path="/ViewPurchaseHistory/:userId" element={<ViewPurchaseHistory/>}/>
             <Route path="/MakePayment" element={<MakePayment/>}/>
             <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/>
+            <Route path="/User" element={<DeleteAccount/>}/>
+
           </Routes>
         </Layout>
       </BrowserRouter>
