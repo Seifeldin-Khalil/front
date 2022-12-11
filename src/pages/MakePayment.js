@@ -1,6 +1,10 @@
+
+
 import React from 'react';
-const MakePayment=()=>{
-    return(0
-    );
+import MakeNewPayment from '../components/auth/MakeNewPayment';
+
+const MakePayment = () => {
+  return <MakeNewPayment />;
 };
+
 export default MakePayment;

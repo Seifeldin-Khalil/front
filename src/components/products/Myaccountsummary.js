@@ -67,4 +67,16 @@ const Myaccountsummary = (props) => {
     </form>
   );
 };
+<<<<<<< HEAD
 export default Myaccountsummary;
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 9e5cf0430e1421513494e32b75a4a7f1ebdead16

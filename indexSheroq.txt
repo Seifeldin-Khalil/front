@@ -1,4 +1,72 @@
-#sherouq
-.sh{
-  font: optional;
+/*sheroq*/
+.carsheroq { ///History>>>>>>>
+  box-shadow: 0 4px 8px 0 rgb(12 74 110);
+  transition: 0.3s;
+  width:800px;
+  height: 300px;
+  padding: 0px;
+  padding-left: 100px;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: -70px;
+  margin-bottom: 80px;
+  float:left;
+}
+
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgb(15, 10, 33);
+}
+
+
+img {
+  float: rigt;
+  margin-left: 400px;
+  margin-top: -75px;
+}
+
+.containersheroq{
+  border-radius: 10px;
+  width: 500px;
+  height: 170px;
+  background-color: rgb(176, 205, 231);
+  box-shadow: 10px 12px 5px 0 rgba(0,0,0,0.24);
+  text-align: center;
+  padding: 20px;
+  display: block;
+}
+
+
+}
+.EditButtonSheroq {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  margin-left: 960px;
+  transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.DeleteButtonSheroq{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-left: 150px;
+  position:absolute;
+  transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }

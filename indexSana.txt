@@ -1,4 +1,50 @@
-#sherouq
-.sh{
-  font: optional;
+cardsana{
+  box-shadow: 0 4px 8px 0 rgb(12 74 110);
+  transition: 0.3s;
+  width:750px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-top: -20px;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  float:left;
+}
+buttonsana {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-left: 10px;
+  position:absolute;
+  transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.buttonsana2{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-left: 150px;
+  position:absolute;
+  transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.CenterBsana{
+  margin-top: 50px;
+  text-align: left;
+  font-weight: bold;
 }
