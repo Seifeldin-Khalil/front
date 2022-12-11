@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import MakeNewPayment from '../components/products/MakeNewPayment';
+import MakeNewPayment from '../components/pages/MakeNewPayment';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const ViewPendingPurchases = () => {
             throw Error(data.error);
           }
   
-          setPayment(data.Payment);
+          setPayment(data.mine);
           setIsLoading(false);
         } catch (err) {
           console.log(err.message);
