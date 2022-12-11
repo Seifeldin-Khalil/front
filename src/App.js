@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './store/AuthProvider';
-
 import AddProductPage from './pages/AddProductPage';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
