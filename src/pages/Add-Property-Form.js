@@ -81,13 +81,9 @@ const AddPropertyForm = () => {
        // <FormInputError>ImgURL must not be empty.</FormInputError>
       )} */}
       <a href="/">
-      <button
-        type="submit"
-        className="bg-white rounded-xl my-4 py-2 px-8 self-center"
-      >
+      <button type="submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
         Add Property
-      </button>
-      </a>
+      </button></a>
     </form>
   );
 };
