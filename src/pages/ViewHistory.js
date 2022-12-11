@@ -1,47 +1,40 @@
 import { useEffect, useState } from 'react';
+import ViewPurchaseHistory from '../components/products/viewPurchaseHistory';
 import { useNavigate } from 'react-router-dom';
-import Pending from '../components/products/Pending';
 import { useParams } from 'react-router-dom';
-import React from 'react';
 
 
-
-const DeleteAccount = (props) => {
+const ViewHistory = () => {
   const [account, setaccount] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const params = useParams();
-  const requestId = params.id;
+  const userId = params.userId;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
 
-    const fetchaccount= async () => {
-      console.log(requestId);
+    const fetchHistory= async () => {
       try {
-        const response = await fetch (`http://localhost:3000/account/userDelete/` + requestId,{
-        method: 'DELETE',
-        signal: fetchSignal
+        const response = await fetch(`http://localhost:3000/account/all/` + userId,{
+            method: 'GET',
+            signal: fetchSignal
         });
         const data = await response.json();
 
         if (!response.ok) {
           throw Error(data.error);
-        }else{
-          navigate(`/viewusers`);
         }
-        
-        setaccount(data.users);
+
+        setaccount(data.History);
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
       }
     };
 
-
-
-    fetchaccount();
+    fetchHistory();
 
     return () => {
       fetchAbortController.abort();
@@ -54,8 +47,8 @@ const DeleteAccount = (props) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
+      <ViewPurchaseHistory account={account} />
     </div>
   );
 };
-
-export default DeleteAccount;
+export default ViewHistory;
