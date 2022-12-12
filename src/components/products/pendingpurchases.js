@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Card from '../../UI/card/Card';
-import CardActions from '../../UI/card/CardActions';
-import CardBody from '../../UI/card/CardBody';
+
   
 // VIEW PENDING PURCHASES
 const ViewPendingPurchases = (props) => {
@@ -35,8 +33,34 @@ const ViewPendingPurchases = (props) => {
     }
   };
 
-  const OnClickHandler2 = () => {
-    navigate(`/Deleted/639551a4d36b1fe03d94fb73`);
+
+  
+  const OnClickHandler2 = async() => {
+    try {
+        
+      const response = await fetch (`http://localhost:3000/MyP/:userId${props.product._id}`, {
+      method: 'PUT',
+      signal: fetchSignal
+      });
+      // parse the response content to JSON and store it into data variable
+      const data = await response.json();
+
+      // If there is an HTTP error (the response is NOT ok), throw the error message we get from the REST API.
+      if (!response.ok) {
+        throw Error(data.error);
+        console.log(data);
+      }else{
+
+        console.log(err.message);
+
+      }
+      
+
+      
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (

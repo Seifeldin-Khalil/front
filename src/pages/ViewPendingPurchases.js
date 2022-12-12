@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-//import MakeNewPayment from '../components/pages/MakeNewPayment';
+import ProductsList from '../components/users/UserList';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
@@ -46,7 +46,7 @@ const ViewPendingPurchases = () => {
   
     return (
       <div className="flex flex-col items-center justify-center">
-       {/* <MakeNewPayment products={products} /> */}
+       { <ProductsList products={products} />}
       </div>
     );
   };

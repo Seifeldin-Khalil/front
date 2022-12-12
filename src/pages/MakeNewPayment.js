@@ -12,7 +12,7 @@ const MakeNewPayment = () => {
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3000/Purchase' + propId, {//////
+      const response = await fetch('http://localhost:3000/Purchase' + propId, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -26,11 +26,7 @@ const MakeNewPayment = () => {
         throw Error(data.error);
       }
 
-      // invoke the login function in our auth context
-      //authContext.login(data.userId, data.username, data.jwt);///////
 
-      // navigate to the home page
-      
     } catch (err) {
       console.log(err.message);
     }
