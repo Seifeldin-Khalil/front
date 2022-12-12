@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import ProductsList from '../components/products/ProductsList';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../store/authContext';
+import React, { useContext } from 'react';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   // let's define a state for loading
   const [isLoading, setIsLoading] = useState(true);
-  const ID = "63969db4feed3771d7a5ee0b";
+  const authContext = useContext(AuthContext);
+
+  const ID = authContext.id;
   const navigate = useNavigate();
 
   const viewBtnHandler = () => {
