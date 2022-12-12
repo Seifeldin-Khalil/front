@@ -23,6 +23,7 @@ import EditPropertyForm from './pages/Edit-Property-Form';
 import Refund from './pages/RefundBtn';
 import ViewPendingPurchases from './pages/ViewPendingPurchases';
 import EditAccount from './pages/EditAccount';
+import AccountPage from './pages/AccountPage';
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
             <Route path="/RefundBtn/:userId" element={<Refund/>}/>
             <Route path = "/ViewPending/:UserID" element = {<ViewPendingPurchases/>}/>
             <Route path="/EditAccount/:userId" element={<EditAccount/>}/>
+            <Route path="/AccountPage/:._id" element={<AccountPage/>}/>
 
 
           </Routes>

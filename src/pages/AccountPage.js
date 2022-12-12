@@ -10,7 +10,7 @@ const AccountPage = (props) => {
     const OnClickHandler = () => {
       navigate(`/AccountPage/${props.product._id}`);
 
-     const OnClickHandlertwo = () => {
+     const OnClickHandlertwo2= () => {
       navigate(/Deleted/); ///Database
     
   };
@@ -61,7 +61,7 @@ const AccountPage = (props) => {
         <h3 className="font-bold">{props.account.Name}</h3>
         <h4>{props.product.UserId}</h4>
         <button onClick={OnClickHandler} className="AccountButton"><h2>AccountPage</h2></button>
-        <button onClick={OnClickHandlertwo} className="DeleteButtonSheroq"><h2>DeleteAccount</h2></button>
+        <button onClick={OnClickHandlertwo2} className="DeleteButtonSheroq"><h2>DeleteAccount</h2></button>
 
       </div>
     </div>
