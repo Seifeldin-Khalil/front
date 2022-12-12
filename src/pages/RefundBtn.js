@@ -22,7 +22,7 @@ const Refund = (props) => {
       console.log(requestId);
       try {
         // send an HTTP GET request to the get products route we defined in our Express REST API
-        const response = await fetch (` http://localhost:3000/Purchase/6391ab88f544616bb02b83df` + requestId,{
+        const response = await fetch (` https://agar-ly.azurewebsites.net/Purchase/6391ab88f544616bb02b83df` + requestId,{
         method: 'DELETE',
         signal: fetchSignal
         });

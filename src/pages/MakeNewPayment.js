@@ -12,7 +12,7 @@ const MakeNewPayment = () => {
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3000/Purchase' + propId, {
+      const response = await fetch('https://agar-ly.azurewebsites.net/Purchase' + propId, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

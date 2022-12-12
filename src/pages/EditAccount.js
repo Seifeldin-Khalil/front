@@ -12,7 +12,7 @@ const EditAccount = () => {
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch(`http://localhost:3000/account/` + userId, {
+      const response = await fetch(`https://agar-ly.azurewebsites.net/account/` + userId, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

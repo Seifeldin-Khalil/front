@@ -18,7 +18,7 @@ const EditPropertyForm = () => {
   const submitHandler = async (formData) => {
   
     try {
-      const response = await fetch(`http://localhost:3000/properties/` + propId, {
+      const response = await fetch(`https://agar-ly.azurewebsites.net/properties/` + propId, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

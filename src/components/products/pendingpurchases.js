@@ -8,7 +8,7 @@ const ViewPendingPurchases = (props) => {
   const OnClickHandler = async() => {
     try {
         
-      const response = await fetch (`http://localhost:3000/Purchase/edit/${props.product._id}`, {
+      const response = await fetch (`https://agar-ly.azurewebsites.net/Purchase/edit/${props.product._id}`, {
       method: 'PUT',
       signal: fetchSignal
       });
@@ -38,7 +38,7 @@ const ViewPendingPurchases = (props) => {
   const OnClickHandler2 = async() => {
     try {
         
-      const response = await fetch (`http://localhost:3000/MyP/:userId${props.product._id}`, {
+      const response = await fetch (`https://agar-ly.azurewebsites.net/MyP/:userId${props.product._id}`, {
       method: 'PUT',
       signal: fetchSignal
       });

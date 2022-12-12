@@ -11,7 +11,7 @@ const History = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/account/63955272d36b1fe03d95fb76/', {
+        const response = await fetch('https://agar-ly.azurewebsites.net/account/63955272d36b1fe03d95fb76/', {
           signal: fetchSignal
         });
         const data = await response.json();

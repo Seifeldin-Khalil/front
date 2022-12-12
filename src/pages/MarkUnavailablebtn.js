@@ -20,7 +20,7 @@ const MarkUnavailablebtn = (props) => {
       console.log(requestId);
       try {
         
-        const response = await fetch (`http://localhost:3000/Purchase/edit/n${requestId}` + requestId,{
+        const response = await fetch (`https://agar-ly.azurewebsites.net/Purchase/edit/n${requestId}` + requestId,{
         method: 'PUT',
         signal: fetchSignal
         });

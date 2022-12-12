@@ -23,7 +23,7 @@ const DeleteAccount = (props) => {
     const fetchProducts = async () => {
       console.log(requestId);
       try {
-        const response = await fetch (`http://localhost:3000/account/` + requestId,{
+        const response = await fetch (`https://agar-ly.azurewebsites.net/account/` + requestId,{
         method: 'DELETE',
         signal: fetchSignal
         });

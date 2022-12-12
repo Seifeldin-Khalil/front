@@ -16,7 +16,7 @@
   
 //       const fetchPayment= async () => {
 //         try {
-//           const response = await fetch(`http://localhost:3000/Purchase/MyP/` + UserID,{
+//           const response = await fetch(`https://agar-ly.azurewebsites.net/Purchase/MyP/` + UserID,{
 //               method: 'GET',
 //               signal: fetchSignal
 //           });
