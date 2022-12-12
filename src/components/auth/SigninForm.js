@@ -4,16 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../store/authContext';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
+import RoleSelectInput from '../../UI/form/RoleSelectInput';
 
 const SigninForm = () => {
   const { register, handleSubmit, formState } = useForm();
 
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const roleOptions=[
+    {name:"Admin",value:"Admin"},
+    {name:"Customer",value:"Customer"}
+  ]
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:5000/auth/signin', {
+      const response = await fetch('http://localhost:3000/auth/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -28,7 +32,7 @@ const SigninForm = () => {
       }
 
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.username, data.jwt);
+      authContext.login(data.userId, data.Username, data.role);
 
       // navigate to the home page
       navigate('/');
@@ -42,6 +46,15 @@ const SigninForm = () => {
       className="flex  flex-col p-10 gap-5 bg-gray-800 w-fit"
       onSubmit={handleSubmit(submitHandler)}
     >
+      <label className="text-white font-bold">Role</label>
+      <RoleSelectInput
+      className='rounded-lg min-w-[250] p-2'
+      name="Role"
+      label="Role"
+      type="text"
+      register={register}
+      validation={{required:true}}
+      options={roleOptions}/>
       <TextInput
         label="Username"
         type="text"
