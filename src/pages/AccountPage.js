@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
-
+//import AccountSummary from '.../components/products/AccountSummary';
 
 const AccountPage = (props) => {
   const navigate = useNavigate();
