@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 const MarkUnavailablebtn = (props) => {
   // let's define a state for products
-  const [products, setProducts] = useState([]);
 
   // let's define a state for loading
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +20,7 @@ const MarkUnavailablebtn = (props) => {
       console.log(requestId);
       try {
         
-        const response = await fetch (` http://localhost:3000/Purchase/edit/6390bd9d7ff8b9938cd0a596` + requestId,{
+        const response = await fetch (`http://localhost:3000/Purchase/edit/n${requestId}` + requestId,{
         method: 'PUT',
         signal: fetchSignal
         });
@@ -37,7 +36,6 @@ const MarkUnavailablebtn = (props) => {
         
 
         // we now need to set our component state to the products we fetched
-        setProducts(data.users);
         // after we set the products' state, let's set the loading state to false
         setIsLoading(false);
       } catch (err) {
@@ -50,7 +48,7 @@ const MarkUnavailablebtn = (props) => {
     return () => {
       fetchAbortController.abort();
     };
-  }, []);
+  }, [requestId, navigate]);
 
   if (isLoading) {
     return <p>Please wait while we are loading data...</p>;
