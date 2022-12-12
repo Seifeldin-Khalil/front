@@ -8,12 +8,17 @@ import { useParams } from 'react-router-dom';
 const EditPropertyForm = () => {
   const navigate = useNavigate();
   const params = useParams();
-  const userId = params.userId;
+  const propId = params.userId;
   const { register, handleSubmit, formState } = useForm();
+  
+  const viewBtnHandler = () => {
+    navigate(`/`);
 
+};
   const submitHandler = async (formData) => {
+  
     try {
-      const response = await fetch(`http://localhost:3000/properties/` + userId, {
+      const response = await fetch(`http://localhost:3000/properties/` + propId, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -81,7 +86,7 @@ const EditPropertyForm = () => {
       {/* {formState.errors.ImgURL && (
        // <FormInputError>ImgURL must not be empty.</FormInputError>
       )} */}
-      <button type="submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
+      <button type="submit" onClick = {viewBtnHandler} className="bg-white rounded-xl my-4 py-2 px-8 self-center">
         Edit Property
       </button>
     </form>

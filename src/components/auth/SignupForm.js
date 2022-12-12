@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const SignupForm = () => {
   const { register, handleSubmit, formState } = useForm();
   const navigate = useNavigate();
-
+  navigate(`/signin`);
   const submitHandler = async (formData) => {
     try {
       const response = await fetch('http://localhost:3000/auth/signup/', {
@@ -21,8 +21,6 @@ const SignupForm = () => {
 
       if (!response.ok) {
         throw Error(data.error);
-      }else{
-        navigate(`/signin`);
       }
 
       console.log(data);

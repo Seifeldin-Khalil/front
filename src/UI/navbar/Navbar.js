@@ -10,8 +10,6 @@ const Navbar = () => {
       <ul className="flex bg-sky-900 justify-center items-center">
         <NavItem to="/">Home</NavItem>
         <NavItem to="/">Account</NavItem>
-        <NavItem to="/properties/all">Products</NavItem>
-        <NavItem to="/products/add">Add Product</NavItem>
         <NavItem to="/admin">Admin</NavItem>
 
         
