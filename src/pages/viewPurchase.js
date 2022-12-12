@@ -11,7 +11,7 @@ const viewpurchase = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/account', {
+        const response = await fetch('http://localhost:3000/account/viewpurchase', {
           signal: fetchSignal
         });
         const data = await response.json();

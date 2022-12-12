@@ -9,11 +9,20 @@ const Navbar = () => {
     <nav>
       <ul className="flex bg-sky-900 justify-center items-center">
         <NavItem to="/">Home</NavItem>
+        <NavItem to="/">Account</NavItem>
         <NavItem to="/properties/all">Products</NavItem>
         <NavItem to="/products/add">Add Product</NavItem>
         <NavItem to="/admin">Admin</NavItem>
+
+        
         {!authContext.token && <NavItem to="/signin">Sign In</NavItem>}
         {!authContext.token && <NavItem to="/signup">Sign Up</NavItem>}
+
+
+
+
+
+
       </ul>
     </nav>
   );
