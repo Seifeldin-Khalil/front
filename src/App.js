@@ -18,10 +18,10 @@ import DeleteMyProp from './pages/DeleteMyProp';
 import AddPropertyForm from './pages/Add-Property-Form';
 import DeleteAccount from './pages/DeleteAccount';
 import MakeNewPayment from './pages/MakeNewPayment';
-import ViewPurchaseHistory from './pages/ViewHistory';
+import ViewPurchaseHistory from './pages/viewHistory';
 import EditPropertyForm from './pages/Edit-Property-Form';
-import RefundButton from './pages/RefundBtn';
-
+import Refund from './pages/RefundBtn';
+import ViewPendingPurchases from './pages/ViewPendingPurchases';
 
 const App = () => {
   return (
@@ -46,11 +46,12 @@ const App = () => {
             <Route path="/AddProperty" element={<AddPropertyForm/>}/>
             <Route path="/DeleteAccount/:id" element={<DeleteAccount/>}/> 
             <Route path="/ViewPurchaseHistory/:userId" element={<ViewPurchaseHistory/>}/>
-            <Route path="/MakeNewPayment" element={<MakeNewPayment/>}/>
+            <Route path="/MakeNewPayment/:propId" element={<MakeNewPayment/>}/>
             <Route path="EditProperty/:userId" element={<EditPropertyForm/>}/>
             {/* <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/> */}
             <Route path="/ViewHistory/:id" element={<ViewPurchaseHistory/>}/>
-            <Route path="RefundBtn/:userId" element={<RefundBtn/>}/>
+            <Route path="/RefundBtn/:userId" element={<Refund/>}/>
+            <Route path = "/ViewPending/:UserID" element = {<ViewPendingPurchases/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import MakeNewPayment from '../components/pages/MakeNewPayment';
+//import MakeNewPayment from '../components/pages/MakeNewPayment';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
 
 const ViewPendingPurchases = () => {
     const [MakePayment, setPayment] = useState([]);
@@ -17,7 +16,7 @@ const ViewPendingPurchases = () => {
   
       const fetchPayment= async () => {
         try {
-          const response = await fetch(`http://localhost:3000/Purchase` + UserID,{
+          const response = await fetch(`http://localhost:3000/Purchase/MyP/` + UserID,{
               method: 'GET',
               signal: fetchSignal
           });
