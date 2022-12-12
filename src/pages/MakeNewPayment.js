@@ -1,19 +1,18 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import AuthContext from '../store/authContext';
 import FormInputError from '../UI/form/FormInputError';
 import TextInput from '../UI/form/TextInput';
+import { useParams } from 'react-router-dom';
 
 const MakeNewPayment = () => {
   const { register, handleSubmit, formState } = useForm();
+  const params = useParams();
 
-  const authContext = useContext(AuthContext);
-  const navigate = useNavigate();
+  const propId = params.propId;
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3000/Purchase', {//////
+      const response = await fetch('http://localhost:3000/Purchase' + propId, {//////
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -31,7 +30,7 @@ const MakeNewPayment = () => {
       //authContext.login(data.userId, data.username, data.jwt);///////
 
       // navigate to the home page
-      navigate('/');
+      
     } catch (err) {
       console.log(err.message);
     }

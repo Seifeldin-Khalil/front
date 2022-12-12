@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import {useNavigate } from 'react-router-dom';
 import Card from '../../UI/card/Card';
 import CardActions from '../../UI/card/CardActions';
 import CardBody from '../../UI/card/CardBody';
@@ -6,6 +7,13 @@ import CardBody from '../../UI/card/CardBody';
 
 const ProductSummary = (props) => {
   // use the navigate function provided by the useNavigate react router hook
+
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const ID = props.product._id;
+  const viewBtnHandler = () => {
+    navigate(`/MakeNewPayment/${ID}`);
+  };
 
   return (
     <dev>
@@ -17,9 +25,7 @@ const ProductSummary = (props) => {
         className="object-scale-down h-[200px]"
         src = {props.product.ImgURL}
         alt = {props.product.Name}/>
-        <a href="/MakeNewPayment">
-            <button class="buttonsama"><h2>Rent</h2></button>
-      </a>
+            <button onClick = {viewBtnHandler} class="buttonsama"><h2>Rent</h2></button>
       </CardBody>
       </dev>
   );
