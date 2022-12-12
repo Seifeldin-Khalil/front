@@ -2,19 +2,19 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
-//import AccountSummary from '.../components/products/AccountSummary';
 
 const AccountPage = (props) => {
   const navigate = useNavigate();
     const { Submit,formState } = useForm();
 
+    const OnClickHandler = () => {
+      navigate(`/AccountPage/${props.product._id}`);
 
-
-  const OnClickHandlertwo = () => {
-    navigate(/Deleted/); ///Database
-
-   
+     const OnClickHandlertwo = () => {
+      navigate(/Deleted/); ///Database
+    
   };
+}
   
     return (
       <form
@@ -60,6 +60,7 @@ const AccountPage = (props) => {
         <h2 className="font-bold">{props.account.Password}</h2>
         <h3 className="font-bold">{props.account.Name}</h3>
         <h4>{props.product.UserId}</h4>
+        <button onClick={OnClickHandler} className="AccountButton"><h2>AccountPage</h2></button>
         <button onClick={OnClickHandlertwo} className="DeleteButtonSheroq"><h2>DeleteAccount</h2></button>
 
       </div>
