@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const SignupForm = () => {
   const { register, handleSubmit, formState } = useForm();
   const navigate = useNavigate();
-  navigate(`/signin`);
 
   const submitHandler = async (formData) => {
     try {
@@ -22,6 +21,8 @@ const SignupForm = () => {
 
       if (!response.ok) {
         throw Error(data.error);
+      }else{
+        navigate(`/signin`);
       }
 
       console.log(data);
@@ -36,9 +37,9 @@ const SignupForm = () => {
       onSubmit={handleSubmit(submitHandler)}
     >
       <TextInput
-        label="Name"
+        label="Email"
         type="text"
-        name="Name"
+        name="Email"
         register={register}
         validation={{ required: true }}
       />
@@ -46,6 +47,7 @@ const SignupForm = () => {
         <FormInputError>Name must not be empty</FormInputError>
       )}
 
+      
       <TextInput
         label="Username"
         type="text"
@@ -58,6 +60,17 @@ const SignupForm = () => {
       )}
 
       <TextInput
+        label="Name"
+        type="text"
+        name="Name"
+        register={register}
+        validation={{ required: true }}
+      />
+      {formState.errors.name && (
+        <FormInputError>Name must not be empty</FormInputError>
+      )}
+
+      <TextInput
         label="Password"
         type="password"
         name="Password"
@@ -67,6 +80,8 @@ const SignupForm = () => {
       {formState.errors.password && (
         <FormInputError>Password must not be empty.</FormInputError>
       )}
+
+      
 
       <button
         type="submit"

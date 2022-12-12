@@ -11,7 +11,6 @@ const HomePage = () => {
 
   const viewBtnHandler = () => {
     navigate(`/viewmine/${ID}`);
-    navigate(`/viewPurchase/${ID}`);
 
 };
   useEffect(() => {
