@@ -1,18 +1,19 @@
 import { useNavigate } from 'react-router-dom';
+import Purchase from '..products/Purchase';
+
 
 const ViewPurchaseHistory = (props) => {
   const navigate = useNavigate();
-
-  ///map // compo>> purchase
-
-  return (
-    <div class="containersheroq">
-      <div class="cardBody">
-        <h1 className="font-bold">{props.product.userId}</h1>
-        <h2>{props.product.pHistory}</h2>
+  const Purchase = (props) => {
+    return (
+      <div>
+        {props.products.map((p) => (
+          <Purchase product={p} key={p._id} />
+        ))}
       </div>
-    </div>
-  );
+    );
+  };
+  
 };
 
 export default ViewPurchaseHistory;
