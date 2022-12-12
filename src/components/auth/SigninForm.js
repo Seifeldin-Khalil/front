@@ -5,12 +5,15 @@ import AuthContext from '../../store/authContext';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
 import RoleSelectInput from '../../UI/form/RoleSelectInput';
+import { useParams } from 'react-router-dom';
 
 const SigninForm = () => {
+  const params = useParams();
   const { register, handleSubmit, formState } = useForm();
-
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
+
+
   const roleOptions=[
     {name:"Admin",value:"Admin"},
     {name:"Customer",value:"Customer"}
@@ -23,19 +26,23 @@ const SigninForm = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
+        
       });
+      console.log(params.Username,params.Password);
 
       const data = await response.json();
 
       if (!response.ok) {
         throw Error(data.error);
+      }else{
+        navigate('/');
       }
 
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.Username, data.role);
+      authContext.login(data.userId, data.Username, data.Role);
 
       // navigate to the home page
-      navigate('/');
+      
     } catch (err) {
       console.log(err.message);
     }
@@ -48,7 +55,7 @@ const SigninForm = () => {
     >
       <label className="text-white font-bold">Role</label>
       <RoleSelectInput
-      className='rounded-lg min-w-[250] p-2'
+      className='rounded-lg min-w-[250px] p-2'
       name="Role"
       label="Role"
       type="text"
@@ -58,7 +65,7 @@ const SigninForm = () => {
       <TextInput
         label="Username"
         type="text"
-        name="username"
+        name="Username"
         register={register}
         validation={{ required: true }}
       />
@@ -69,7 +76,7 @@ const SigninForm = () => {
       <TextInput
         label="Password"
         type="password"
-        name="password"
+        name="Password"
         register={register}
         validation={{ required: true }}
       />
@@ -80,6 +87,7 @@ const SigninForm = () => {
       <button
         type="submit"
         className="bg-white rounded-xl my-4 py-2 px-8 self-center"
+        onClick={navigate}
       >
         Sign in
       </button>

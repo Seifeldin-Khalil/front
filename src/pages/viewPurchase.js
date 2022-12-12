@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import PendingList from '../components/products/PendingList';
+import ViewPurchaseHistory from '../components/products/ViewPurchaseHistory';
 
 const History = () => {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ const History = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3000/account/viewPurchaseHistory', {
+        const response = await fetch('http://localhost:3000/account/63955272d36b1fe03d95fb76/', {
           signal: fetchSignal
         });
         const data = await response.json();
@@ -40,7 +40,7 @@ const History = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <PendingList products={products} />
+      <ViewPurchaseHistory products ={products}></ViewPurchaseHistory>
     </div>
   );
 };

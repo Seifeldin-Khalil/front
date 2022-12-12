@@ -24,7 +24,6 @@ import Refund from './pages/RefundBtn';
 import ViewPendingPurchases from './pages/ViewPendingPurchases';
 import EditAccount from './pages/EditAccount';
 
-
 const App = () => {
   return (
     <AuthProvider>
@@ -48,12 +47,12 @@ const App = () => {
             <Route path="/AddProperty" element={<AddPropertyForm/>}/>
             <Route path="/DeleteAccount/:id" element={<DeleteAccount/>}/> 
             <Route path="/MakeNewPayment/:propId" element={<MakeNewPayment/>}/>
-            <Route path="EditProperty/:userId" element={<EditPropertyForm/>}/>
+            <Route path="/EditProperty/:userId" element={<EditPropertyForm/>}/>
             {/* <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/> */}
             <Route path="/ViewPurchase/:id" element={<History/>}/>
             <Route path="/RefundBtn/:userId" element={<Refund/>}/>
             <Route path = "/ViewPending/:UserID" element = {<ViewPendingPurchases/>}/>
-            <Route path="EditAccount/:userId" element={<EditAccount/>}/>
+            <Route path="/EditAccount/:userId" element={<EditAccount/>}/>
 
 
           </Routes>
