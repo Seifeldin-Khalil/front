@@ -12,6 +12,10 @@ const MyPropSummary = (props) => {
     navigate(`/Deleted/${props.product._id}`);
   };
 
+  const OnClickHandler1 = () => {
+    navigate(`/EditProperty/${props.product._id}`);
+  };
+
   return (
         <div class="cardsama">
         <h3 class = "Center">{props.product.Name}</h3>
@@ -21,7 +25,7 @@ const MyPropSummary = (props) => {
         className="object-scale-down h-[200px]"
         src = {props.product.ImgURL}
         alt = {props.product.Name}/>
-            <button button onClick={OnClickHandler} class="buttonsama"><h2>Edit</h2></button>
+            <button button onClick={OnClickHandler1} class="buttonsama">Edit</button>
             <button button onClick={OnClickHandler} class="buttonsama2">Delete</button>
       </div>
   );

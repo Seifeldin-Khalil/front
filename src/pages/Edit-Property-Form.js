@@ -81,10 +81,9 @@ const EditPropertyForm = () => {
       {/* {formState.errors.ImgURL && (
        // <FormInputError>ImgURL must not be empty.</FormInputError>
       )} */}
-      <a href="/">
       <button type="submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
         Edit Property
-      </button></a>
+      </button>
     </form>
   );
 };
