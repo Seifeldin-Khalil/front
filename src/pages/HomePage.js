@@ -10,7 +10,9 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const authContext = useContext(AuthContext);
 
-  const ID = authContext.id;
+  //const ID = authContext.id;
+
+  const ID =  '63969db4feed3771d7a5ee0b';
   const navigate = useNavigate();
 
   const viewBtnHandler = () => {

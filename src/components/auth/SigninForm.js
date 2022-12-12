@@ -12,7 +12,8 @@ const SigninForm = () => {
   const { register, handleSubmit, formState } = useForm();
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
-
+  navigate('/');
+  
 
   const roleOptions=[
     {name:"Admin",value:"Admin"},
@@ -28,14 +29,12 @@ const SigninForm = () => {
         body: JSON.stringify(formData)
         
       });
-      console.log(params.Username,params.Password);
+      console.log(params.Username,params.Password,params.Role);
 
       const data = await response.json();
 
       if (!response.ok) {
         throw Error(data.error);
-      }else{
-        navigate('/');
       }
 
       // invoke the login function in our auth context
