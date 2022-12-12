@@ -44,31 +44,31 @@ const EditAccount = () => {
         register={register}
         validation={{ required: true }}
       />
-       {formState.errors.Name && (
+       {/* {formState.errors.Name && (
           <FormInputError>Name must not be empty.</FormInputError>
-        )}
+        )} */}
 
       <TextInput
           label="UserName"
           type="text"
           name="Username"
-          Submit={Submit}
+          register={register}
           validation={{ required: true }}
         />
-        {formState.errors.username && (
+        {/* {formState.errors.username && (
           <FormInputError>Username must not be empty.</FormInputError>
-        )}
+        )} */}
 
           <TextInput
           label="Password"
           type="password"
           name="Password"
-          Submit={Submit}
+          register={register}
           validation={{ required: true }}
         />
-        {formState.errors.password && (
+        {/* {formState.errors.password && (
           <FormInputError>Password must not be empty.</FormInputError>
-        )}
+        )} */}
 
      
       <a href="/">

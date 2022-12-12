@@ -18,7 +18,7 @@ import DeleteMyProp from './pages/DeleteMyProp';
 import AddPropertyForm from './pages/Add-Property-Form';
 import DeleteAccount from './pages/DeleteAccount';
 import MakeNewPayment from './pages/MakeNewPayment';
-import viewpurchase from './pages/viewpurchase';
+import viewPurchase from './pages/viewPurchase';
 import EditPropertyForm from './pages/Edit-Property-Form';
 import Refund from './pages/RefundBtn';
 import ViewPendingPurchases from './pages/ViewPendingPurchases';
@@ -50,7 +50,7 @@ const App = () => {
             <Route path="/MakeNewPayment/:propId" element={<MakeNewPayment/>}/>
             <Route path="EditProperty/:userId" element={<EditPropertyForm/>}/>
             {/* <Route path="/pendingpurchases/:UserID" element={<ViewPendingPurchases/>}/> */}
-            <Route path="/viewpurchase/:id" element={<viewpurchase/>}/>
+            <Route path="/viewpurchase/:id" element={<viewPurchase/>}/>
             <Route path="/RefundBtn/:userId" element={<Refund/>}/>
             <Route path = "/ViewPending/:UserID" element = {<ViewPendingPurchases/>}/>
             <Route path="EditAccount/:userId" element={<EditAccount/>}/>
